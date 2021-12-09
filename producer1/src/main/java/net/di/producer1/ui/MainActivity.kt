@@ -13,13 +13,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-//        AppBroadcast().setIntent()
-
+      //  AppBroadcast().setIntent()
         val intent = Intent()
         intent.action = "net.di.consumera"
         intent.putExtra("producer", "producer1")
-        intent.component = ComponentName("net.di.consumera", "net.di.consumera.ui.MainActivity")
-        Log.d("kajal", "onCreate: sendBC")
+        //intent.component = ComponentName("net.di.consumera", "net.di.consumera.receiver.ProducerReceiver")
         sendBroadcast(intent)
     }
 }

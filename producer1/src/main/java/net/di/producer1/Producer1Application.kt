@@ -6,7 +6,7 @@ import android.util.Log
 import net.di.producer1.controllers.FeatureDirectoryBuilder
 
 class Producer1Application : Application() {
-    var instance: Application
+
 
     init {
         Log.d("kajal", ":init ")
@@ -14,13 +14,13 @@ class Producer1Application : Application() {
         FeatureDirectoryBuilder.build(this)
     }
 
-    fun getInstance(): Context {
-        Log.d("kaja", "getInstance: $instance")
-        return instance
-    }
 
-//    companion object {
-//
-//
-//    }
+
+    companion object {
+        lateinit var instance: Application
+        fun getInstance(): Context {
+            Log.d("kaja", "getInstance: $instance")
+            return instance
+        }
+    }
 }
